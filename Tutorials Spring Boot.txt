@@ -1,0 +1,48 @@
+Initializr
+  https://start.spring.io/
+
+YT tutorial
+  https://www.youtube.com/watch?v=9SGDpanrc8U
+
+0. Quickstart
+  https://spring.io/quickstart
+
+1. Building a RESTful Web Service
+  https://spring.io/guides/gs/rest-service/
+
+2. Consuming RESTful Web Service
+  https://spring.io/guides/gs/consuming-rest/
+
+3. Enable CORS
+  https://spring.io/guides/gs/rest-service-cors/
+  
+4. Uploading Files
+  https://spring.io/guides/gs/uploading-files/
+  
+5. Download file
+  https://www.baeldung.com/spring-controller-return-image-file
+
+6. HTTP authentication
+  https://spring.io/guides/gs/securing-web/
+
+7. JWT authentication
+  https://dzone.com/articles/spring-boot-security-json-web-tokenjwt-hello-world
+
+8. Accessing Data with JPA
+  https://spring.io/guides/gs/accessing-data-jpa/
+
+9. Accessing data with MySQL
+ https://spring.io/guides/gs/accessing-data-mysql/
+
+10. Repositories with Rest
+  http://progressivecoder.com/exposing-repositories-as-rest-resources-using-spring-boot/
+
+11. Asynchronous Methods
+  https://spring.io/guides/gs/async-method/
+  
+12. Status Code
+  https://zetcode.com/springboot/responsestatus/
+
+
+
+
