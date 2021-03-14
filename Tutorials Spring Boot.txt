@@ -26,7 +26,7 @@ YT tutorial
   https://spring.io/guides/gs/securing-web/
 
 7. JWT authentication
-  https://dzone.com/articles/spring-boot-security-json-web-tokenjwt-hello-world
+  https://www.javainuse.com/spring/boot-jwt
 
 8. Accessing Data with JPA
   https://spring.io/guides/gs/accessing-data-jpa/

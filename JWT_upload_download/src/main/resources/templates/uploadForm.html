@@ -1,0 +1,22 @@
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+	<title>
+		Lista fajlova
+	</title>
+</head>
+<body>
+	<h1>Lista fajlova na serveru:</h1>
+	<div th:if="${message}">
+		<h2 th:text="${message}"/>
+	</div>
+
+	<div>
+		<ul>
+			<li th:each="file : ${files}">
+				<a th:href="${file}" th:text="${file}" />
+			</li>
+		</ul>
+	</div>
+
+</body>
+</html>
