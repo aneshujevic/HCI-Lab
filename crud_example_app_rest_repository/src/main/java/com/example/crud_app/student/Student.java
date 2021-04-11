@@ -15,7 +15,6 @@ public class Student {
 
     @ManyToOne
     private Department department;
-    
 
     public long getId() {
         return id;
