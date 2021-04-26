@@ -7,7 +7,7 @@ import org.springframework.web.client.HttpClientErrorException;
 import java.util.ArrayList;
 import java.util.Optional;
 
-// @CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class StudentController {
     public static ArrayList<Student> students = new ArrayList<>();
