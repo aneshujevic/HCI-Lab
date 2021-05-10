@@ -1,0 +1,3 @@
+Potrebno je instalirati redux, redux toolkit i redux thunk
+npm install @reduxjs/toolkit
+npm install redux-thunk
