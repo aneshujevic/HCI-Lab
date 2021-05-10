@@ -1,5 +1,5 @@
 import {createReducer} from "@reduxjs/toolkit";
-import {addDepartment, addStudent, deleteStudent} from "./actions";
+import {addDepartment, createStudent, deleteStudent} from "./actions";
 
 /** Bez redux toolkit-a
  function studentReducer(state = {students: []}, action) {
@@ -30,7 +30,7 @@ import {addDepartment, addStudent, deleteStudent} from "./actions";
  **/
 
 const studentsReducer = createReducer([], (builder => {
-        builder.addCase(addStudent, (state, action) => {
+        builder.addCase(createStudent, (state, action) => {
             state.push(action.payload.student)
         })
             .addCase(deleteStudent, (state, action) => {

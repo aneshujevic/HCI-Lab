@@ -21,7 +21,7 @@
 import {createAction} from "@reduxjs/toolkit";
 
 
-const addStudent = createAction('ADD_STUDENT');
+const createStudent = createAction('ADD_STUDENT');
 // addStudent({student: someStudentObj}) izgleda kao
 // {type: 'ADD_STUDENT', payload: {student: someStudentObj}}
 
@@ -29,4 +29,4 @@ const deleteStudent = createAction('DELETE_STUDENT');
 
 const addDepartment = createAction('ADD_DEPARTMENT');
 
-export {addStudent, deleteStudent, addDepartment}
+export {createStudent, deleteStudent, addDepartment}
