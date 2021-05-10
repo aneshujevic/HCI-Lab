@@ -25,7 +25,8 @@ function AddStudentListItem(props) {
                     department: departmentValue.current.value
                 }
 
-                axios.post("http://localhost:8080/student", student).then(resp => {
+                axios.post("http://localhost:8080/student", student)
+                    .then(resp => {
                     props.setGlobalState({
                         ...props.globalState,
                         students: [...props.globalState.students, student]

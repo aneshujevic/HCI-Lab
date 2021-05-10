@@ -1,39 +1,47 @@
-import {useRef} from 'react';
-import {createStudentApi} from "../../../state/api";
-import {connect, useDispatch} from "react-redux";
+import {useState} from 'react';
 
 function AddStudentListItem(props) {
-    // ovo je losa praksa, ne treba koristiti useRef toliko cesto
-    // primer bolje implementacije bi bio pomocu formi
-    const nameValue = useRef(null);
-    const surnameValue = useRef(null);
-    const departmentValue = useRef(null);
-    const genderValue = useRef(null);
-    const dispatch = useDispatch();
+    const [student, setStudent] = useState({
+        name: null,
+        surname: null,
+        gender: null,
+        department: null
+    });
 
     return (
-        <div>
-            <input placeholder="Unesite ime" ref={nameValue}/> &nbsp;
-            <input placeholder="Unesite prezime" ref={surnameValue}/> &nbsp;
-            <input placeholder="Unesite pol" ref={genderValue}/> &nbsp;
-            <input placeholder="Unesite departman" ref={departmentValue}/> &nbsp;
-
-            <button onClick={_ => {
-                const student = {
-                    name: nameValue.current.value,
-                    surname: surnameValue.current.value,
-                    gender: genderValue.current.value,
-                    department: departmentValue.current.value
+        <form onSubmit={(event) =>  {
+            // ovde bismo ubacili logiku za validaciju
+            props.createStudent(student);
+            event.preventDefault();
+        }}>
+            <input
+                placeholder="Unesite ime"
+                onChange= {
+                    e => setStudent({...student, name: e.target.value})
                 }
-                props.createStudent(student);
-            }} style={{margin: 5}}> Dodaj studenta
-            </button>
-        </div>
+            /> &nbsp;
+            <input
+                placeholder="Unesite prezime"
+                onChange={
+                    e => setStudent({...student, surname: e.target.value})
+                }
+            /> &nbsp;
+            <input
+                placeholder="Unesite pol"
+                onChange={
+                    e => setStudent({...student, gender: e.target.value})
+                }
+            /> &nbsp;
+            <input
+                placeholder="Unesite departman"
+                onChange={
+                    e => setStudent({...student, department: e.target.value})
+                }
+            /> &nbsp;
+
+            <input type="submit" value="Dodaj studenta" style={{margin: 5}} />
+        </form>
     )
 }
 
-const mapDispatchToProps = dispatch => ({
-    createStudent: (student) => dispatch(createStudentApi({student: student}))
-});
-
-export default connect(null, mapDispatchToProps)(AddStudentListItem);
+export default AddStudentListItem;
