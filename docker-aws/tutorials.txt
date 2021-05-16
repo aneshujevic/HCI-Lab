@@ -8,4 +8,9 @@ https://spring.io/guides/gs/spring-boot-docker/
 https://blog.clairvoyantsoft.com/deploy-and-run-docker-images-on-aws-ecs-85a17a073281?gi=b50b7dc2c82c
 
 
+// detailed yt guides
+
+https://www.youtube.com/watch?v=3hLmDS179YE
+https://www.youtube.com/watch?v=k1RI5locZE4
+
 
