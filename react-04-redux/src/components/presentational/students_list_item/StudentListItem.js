@@ -1,5 +1,3 @@
-const axios = require('axios');
-
 function StudentListItem(props) {
     return (
         <div style={styles.containerStyle}>

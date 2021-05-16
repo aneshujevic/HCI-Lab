@@ -5,7 +5,7 @@ import {connect} from "react-redux";
 function StudentList(props) {
     return (
         <div style={styles.listContainer}>
-            <AddStudentListItem/>
+            <AddStudentListItem createStudent={(student) => props.createStudent(student)}/>
             {props.students && props.students.map( (student, id) =>
                 <StudentListItem
                     key={id}

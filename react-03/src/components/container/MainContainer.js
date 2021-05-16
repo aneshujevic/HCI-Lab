@@ -9,6 +9,7 @@ function MainContainer() {
         departments: []
     });
 
+
     useEffect(() => {
             const fetchStudents = async () => {
                 const studentsResponse = await axios.get('http://localhost:8080/student');

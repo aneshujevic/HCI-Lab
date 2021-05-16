@@ -1,15 +1,16 @@
 import {useEffect} from 'react';
 import StudentList from "../presentational/students_list/StudentList";
-import {deleteStudentApi, fetchDepartmentsApi, fetchStudentsApi} from "../../state/api";
+import {createStudentApi, deleteStudentApi, fetchDepartmentsApi, fetchStudentsApi} from "../../state/api";
 import {connect} from "react-redux";
 
 function MainContainer(props) {
     const state = props.state;
+    const {getDepartments, getStudents} = props;
 
     useEffect(() => {
-        props.getDepartments();
-        props.getStudents();
-        }, []
+        getDepartments();
+        getStudents();
+        }, [getDepartments, getStudents]
     )
 
     return (
@@ -31,7 +32,7 @@ function MainContainer(props) {
 
             <div style={styles.rightCol}>
                 <h1>students</h1>
-                <StudentList deleteStudent={props.deleteStudent}/>
+                <StudentList createStudent={props.createStudent} deleteStudent={props.deleteStudent}/>
             </div>
         </div>
     );
@@ -44,7 +45,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
     getStudents: () => dispatch(fetchStudentsApi()),
     getDepartments: () => dispatch(fetchDepartmentsApi()),
-    deleteStudent: (studLink) => dispatch(deleteStudentApi(studLink))
+    deleteStudent: (studLink) => dispatch(deleteStudentApi(studLink)),
+    createStudent: (student) => dispatch(createStudentApi({student: student}))
 })
 
 const styles = {

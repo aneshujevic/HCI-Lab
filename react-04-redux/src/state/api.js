@@ -1,6 +1,6 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
 import axios from "axios";
-import {addDepartment, addStudent, deleteStudent} from "./actions";
+import {addDepartment, createStudent, deleteStudent} from "./actions";
 
 /**
  interface ThunkAPI {
@@ -16,7 +16,7 @@ const fetchStudentsApi = createAsyncThunk(
     'API_FETCH_STUDENTS',
     async (_, thunkAPI) => {
         const studentsResponse = await axios.get('http://localhost:8080/student');
-        studentsResponse.data._embedded.student.map( x => thunkAPI.dispatch(addStudent({student: x})));
+        studentsResponse.data._embedded.student.map( x => thunkAPI.dispatch(createStudent({student: x})));
         return studentsResponse.data._embedded.student;
     }
 );
@@ -35,7 +35,7 @@ const createStudentApi = createAsyncThunk(
     'API_CREATE_STUDENT',
     async (payload, thunkAPI) => {
         const resp = await axios.post("http://localhost:8080/student", payload.student);
-        thunkAPI.dispatch(addStudent({student: resp.data}));
+        thunkAPI.dispatch(createStudent({student: resp.data}));
         console.log(resp.data)
     }
 )

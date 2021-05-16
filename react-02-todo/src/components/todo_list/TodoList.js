@@ -7,8 +7,16 @@ function TodoList() {
 
     return (
         <div style={styles.listContainer}>
-            {tasks && tasks.map((task, id) =>
-                <TodoListItem key={id} id={id + 1} task={task} deleteTask={() => setTasks([...tasks].filter(x => x !== task))} /> )
+            {tasks && tasks.map(
+                (task, id) =>
+                <TodoListItem
+                    key={id}
+                    id={id + 1}
+                    task={task}
+                    deleteTask={
+                        () => setTasks([...tasks].filter(x => x !== task))
+                    }
+                /> )
             }
             <AddListItem tasks={tasks} setTasks={setTasks}/>
         </div>
